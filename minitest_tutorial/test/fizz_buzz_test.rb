@@ -26,7 +26,7 @@ class FizzBuzzTest < Minitest::Test
 
   def test_converts_multiples_of_three_to_fizz
     [3, 18, 42].each do |i|
-        assert_equal 'Buzz', @fb.convert(i)
+        assert_equal 'Fizz', @fb.convert(i)
     end
     # assert_equal 'Fizz', @fb.convert(3)
     # assert_equal 'Fizz', @fb.convert(18)
