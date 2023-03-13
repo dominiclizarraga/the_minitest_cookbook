@@ -2,26 +2,35 @@ require 'test_helper'
 require 'fizz_buzz'
 
 class FizzBuzzTest < Minitest::Test
-  def setup
+  def setup # runs before each test, and `teardown`` , which runs after each test
     @fb = FizzBuzz.new
   end
 
   def test_converts_multiples_of_fifteen_to_fizzbuzz
-    assert_equal 'FizzBuzz', @fb.convert(15)
-    assert_equal 'FizzBuzz', @fb.convert(45)
-    assert_equal 'FizzBuzz', @fb.convert(90)
+    [15, 45, 90].each do |i|
+        assert_equal 'FizzBuzz', @fb.convert(i)
+    end
+    # assert_equal 'FizzBuzz', @fb.convert(15)
+    # assert_equal 'FizzBuzz', @fb.convert(45)
+    # assert_equal 'FizzBuzz', @fb.convert(90)
   end
 
   def test_converts_multiples_of_five_to_buzz
-    assert_equal 'Buzz', @fb.convert(5)
-    assert_equal 'Buzz', @fb.convert(20)
-    assert_equal 'Buzz', @fb.convert(100)
+    [5, 20, 100].each do |i|
+        assert_equal 'Buzz', @fb.convert(i)
+    end
+    # assert_equal 'Buzz', @fb.convert(5)
+    # assert_equal 'Buzz', @fb.convert(20)
+    # assert_equal 'Buzz', @fb.convert(100)
   end
 
   def test_converts_multiples_of_three_to_fizz
-    assert_equal 'Fizz', @fb.convert(3)
-    assert_equal 'Fizz', @fb.convert(18)
-    assert_equal 'Fizz', @fb.convert(42)
+    [3, 18, 42].each do |i|
+        assert_equal 'Buzz', @fb.convert(i)
+    end
+    # assert_equal 'Fizz', @fb.convert(3)
+    # assert_equal 'Fizz', @fb.convert(18)
+    # assert_equal 'Fizz', @fb.convert(42)
   end
 
   def test_returns_same_number_for_other_numbers
